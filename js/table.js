@@ -4,7 +4,8 @@ $(function() {
         $('#home-link').removeClass('active');
         $('#table-link').addClass('active');
         $('#summary-link').removeClass('active');
-    });   
+    });
+    $('#footer').load('footer.html');
 });
 
 
@@ -16,7 +17,7 @@ const fetchRecords = async(func) => {
     const res = await fetch('http://localhost:5000/data');
     data = await res.json();
     console.log(data);
-    
+
     func(data);
     return data;
 }
@@ -47,10 +48,10 @@ searchBar.addEventListener('keyup', (e) => {
 
 
 
-function buildTable(data){
+function buildTable(data) {
     var table = document.getElementById("myTable");
     table.innerHTML = '';
-    for (var i = 0; i < data.length; i++){
+    for (var i = 0; i < data.length; i++) {
         var row = `<tr>
                         <td>${data[i].id}</td>
                         <td>${data[i].lastName}</td>

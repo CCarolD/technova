@@ -88,6 +88,7 @@ $(function() {
         $('#table-link').removeClass('active');
         $('#summary-link').removeClass('active');
     });
+    $('#footer').load('footer.html');
     $("#first-dose").hide();
     $("#second-dose").hide();
     const inputArr = document.getElementById('add-form').getElementsByTagName('input');
