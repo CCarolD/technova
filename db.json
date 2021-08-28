@@ -1,22 +1,38 @@
 {
-    "type": [{
-        "name": "Pfizer"
-    }, {
-        "name": "Mordena"
-    }, {
-        "name": "Sinovac"
-    }],
-    "data": [{
-        "id": 1,
-        "studentId": 20000000,
-        "faculty": "MATH",
-        "visa": "Canadian",
-        "lastName": "Waterloo",
-        "firstName": "Goose",
-        "doseNum": 2,
-        "firstDoseManufacturer": "Pfizer",
-        "firstDoseDate": "2021-03-21",
-        "secondDoseManufacturer": "Mordena",
-        "secondDoseDate": "2021-05-03"
-    }]
+  "type": [
+    {
+      "name": "Pfizer"
+    },
+    {
+      "name": "Mordena"
+    },
+    {
+      "name": "Sinovac"
+    }
+  ],
+  "data": [
+    {
+      "id": 1,
+      "studentId": 20000000,
+      "faculty": "MATH",
+      "visa": "Canadian",
+      "lastName": "Waterloo",
+      "firstName": "Goose",
+      "doseNum": 2,
+      "firstDoseManufacturer": "Pfizer",
+      "firstDoseDate": "2021-03-21",
+      "secondDoseManufacturer": "Mordena",
+      "secondDoseDate": "2021-05-03"
+    },
+    {
+      "lastName": "Mosunov",
+      "firstName": "Anton",
+      "id": 2
+    },
+    {
+      "lastName": "Mosunov",
+      "firstName": "Anton",
+      "id": 3
+    }
+  ]
 }

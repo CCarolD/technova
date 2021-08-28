@@ -18,6 +18,30 @@ function bindFormData() {
     // Carol在这边写取值的码，return一个object
 }
 
+const moveNext = (obj) => {
+    const current_fs = obj.parent().parent().parent().parent();
+    const next_fs = current_fs.next();
+    next_fs.show();
+    //hide the current fieldset with style
+    current_fs.animate({
+        opacity: 0
+    }, {
+        step: function(now) {
+            // for making fielset appear animation
+            opacity = 1 - now;
+
+            current_fs.css({
+                'display': 'none',
+                'position': 'relative'
+            });
+            next_fs.css({
+                'opacity': opacity
+            });
+        },
+        duration: 600
+    });
+}
+
 $(function() {
     // index.html navbar一栏，设置active class
     $('#navBar').load('navbar.html', function() {
@@ -51,6 +75,10 @@ $(".next").click(function() {
         },
         duration: 600
     });
+    if ($(this).hasClass('submit-btn')) {
+        var newRecord = bindFormData();
+        var data = addRecord(newRecord);
+    }
 });
 
 $(".prev").click(function() {
@@ -88,9 +116,4 @@ $("#dose-num-input").on("change", function() {
         $("#first-dose").hide();
         $("#second-dose").hide();
     }
-});
-
-$("#submit-btn").on("change", function() {
-    var newRecord = bindFormData();
-    addRecord(newRecord);
 });
