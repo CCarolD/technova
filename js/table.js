@@ -67,4 +67,3 @@ function buildTable(data){
         table.innerHTML += row;
     }
 }
-
