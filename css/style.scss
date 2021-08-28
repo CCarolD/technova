@@ -2,6 +2,7 @@ $site-c1: #e2f1e8;
 $site-c2: #b0d8c0;
 $site-c3: #469667;
 $site-c4: #1f7341;
+
 nav {
     background-color: #fff;
     font-family: 'Oxygen', sans-serif;
@@ -12,6 +13,11 @@ nav {
     font-size: 2em;
     color: $site-c4;
     font-weight: bold;
+}
+
+a {
+    text-decoration: none;
+    border-radius: 10px;
 }
 
 a:hover, a:focus {
@@ -30,8 +36,9 @@ a:hover, a:focus {
 }
 
 .nav-item a:hover, .nav-item a:focus {
-    background-color: $site-c4;
-    color: #fff !important;
+    background-image: linear-gradient(to top left, #6ed197, #1f7341);
+    color: rgb(233, 240, 236) !important;
+    text-shadow: 1px 1px 1px rgb(92, 94, 93);
 }
 
 button.navbar-toggler {

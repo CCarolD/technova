@@ -22,15 +22,23 @@
 <body>
   <div id="navBar"></div>
   <div class="container">
-    <div class="container-row row">
+    <!-- <div class="container-row row">
       <div class="col-4 d-flex justify-content-center">
         <i class="fa fa-heartbeat index-icon fa-5x" aria-hidden="true"></i>
       </div>
-      <div class="col-4 d-flex justify-content-center">
+     <div class="col-4 d-flex justify-content-center">
         <i class="fa fa-ambulance index-icon fa-5x" aria-hidden="true"></i>
       </div>
       <div class="col-4 d-flex justify-content-center">
         <i class="fa fa-user-md index-icon fa-5x" aria-hidden="true"></i>
+      </div>
+    </div> -->
+
+    <div class="intro">
+      <div class="subtitle">
+        <h2 id="first">Fight against</h2>
+        <h2 id="second">COVID-19</h2>
+        <h2 id="third">together.</h2>
       </div>
     </div>
 
@@ -39,38 +47,41 @@
 
       </div>
       <div class="col-12 col-md-6">
-        <div class="form-tip">
-          <h2>Have you get vaccine ... ? </h2>
+       <!-- <div class="form-tip">
+          <h2>Have you get vaccine ... ? </h2> -->
         </div>
         <div class="card col-12">
           <div class="card-header bg-success text-white d-flex align-items-center">
-            <h4>Submit your vaccination record</h4>
+            <h4>Submit your vaccination information</h4>
           </div>
           <div class="card-body">
-            <form id="add-form">
+            <form class="needs-validation" id="add-form" novalidate>
               <fieldset>
                 <div class="form-card">
                   <div class="form-group row">
                     <label for="first-name-input" class="col-12 col-md-3 col-form-label">Name</label>
                     <div class="col-12 col-md-4">
-                      <input type="text" class="form-control" name="name" id="first-name-input" placeholder="First Name">
+                      <input type="text" class="form-control" name="name" id="first-name-input" placeholder="First Name" required>
+                      <div class="invalid-feedback">Please provide your first name.</div>
                     </div>
                     <div class="col-12 col-md-4">
-                      <input type="text" class="form-control" name="name" id="last-name-input" placeholder="Last Name">
+                      <input type="text" class="form-control" name="name" id="last-name-input" placeholder="Last Name" required>
+                      <div class="invalid-feedback">Please provide your last name.</div>
                     </div>
                   </div>
 
                   <div class="form-group row">
                     <label for="student-id-input" class="col-12 col-md-3 col-form-label">Student ID</label>
                     <div class="col-12 col-md-6">
-                      <input type="text" class="form-control" name="studentId" id="student-id-input" placeholder="12345678">
+                      <input type="text" class="form-control" name="studentId" id="student-id-input" placeholder="12345678" required>
+                      <div class="invalid-feedback">Please provide your student ID.</div>
                     </div>
                   </div>
 
                   <div class="form-group row">
                     <label for="faculty-input" class="col-12 col-md-3 col-form-label">Faculty</label>
                     <div class="col-12 col-md-6">
-                      <select class="form-control" name="faculty" id="faculty-input">
+                      <select class="form-control" name="faculty" id="faculty-input" required>
                         <option selected value="1">AHS</option>
                         <option value="2">ARTS</option>
                         <option value="3">ENG</option>
@@ -78,17 +89,19 @@
                         <option value="5">MATH</option>
                         <option value="6">SCI</option>
                       </select>
+                      <div class="invalid-feedback">Please select your faculty.</div>
                     </div>
                   </div>
 
                   <div class="form-group row">
                     <label for="visa-input" class="col-12 col-md-3 col-form-label">Visa Status</label>
                     <div class="col-12 col-md-6">
-                      <select class="form-control" name="visa" id="visa-input">
+                      <select class="form-control" name="visa" id="visa-input" required>
                         <option selected value="1">Canadian</option>
                         <option value="2">Canadian Permanent Resident</option>
                         <option value="3">International</option>
                       </select>
+                      <div class="invalid-feedback">Please select your visa status.</div>
                     </div>
                   </div>
 
@@ -105,10 +118,11 @@
                   <div class="form-group row">
                     <label for="dose-num-input" class="col-12 col-md-4 col-form-label">Number of Doses</label>
                     <div class="col-12 col-md-2">
-                      <select class="form-control col-12 col-md-6" name="doseNum" id="dose-num-input">
+                      <select class="form-control col-12 col-md-6" name="doseNum" id="dose-num-input" required>
                         <option selected value="1">1</option>
                         <option value="2">2</option>
                       </select>
+                      <div class="invalid-feedback">Please select the number of doses.</div>
                     </div>
                   </div>
 
@@ -116,13 +130,14 @@
                     <div class="form-group row">
                       <label for="vaccine-date-input" class="col-12 col-md-3 col-form-label">Date</label>
                       <div class="col-12 col-md-9">
-                        <input class="form-control" type="date" name="vaccine-date" id="vaccine-date-input-1">
+                        <input class="form-control" type="date" name="vaccine-date" id="vaccine-date-input-1" required>
+                        <div class="invalid-feedback">Please provide your vaccination date.</div>
                       </div>
                     </div>
                     <div class="form-group row">
                       <label for="vaccine-type-input" class="col-12 col-md-3 col-form-label">Manufacturer</label>
                       <div class="col-12 col-md-9">
-                        <select class="form-control" name="vaccine-type" id="vaccine-type-input-1">
+                        <select class="form-control" name="vaccine-type" id="vaccine-type-input-1" required>
                           <option selected value="1">Pfizer BioNTech Manufacturing
                             GmbH</option>
                           <option value="2">AstraZeneca, AB</option>
@@ -132,6 +147,7 @@
                           <option value="6">Sinoharm/BIBP</option>
                           <option value="7">Other</option>
                         </select>
+                        <div class="invalid-feedback">Please select the manufacurer name.</div>
                       </div>
                     </div>
                   </div>
@@ -140,13 +156,14 @@
                     <div class="form-group row">
                       <label for="vaccine-date-input" class="col-12 col-md-3 col-form-label">Date</label>
                       <div class="col-12 col-md-9">
-                        <input class="form-control" type="date" name="vaccine-date" id="vaccine-date-input-1">
+                        <input class="form-control" type="date" name="vaccine-date" id="vaccine-date-input-1" required>
+                        <div class="invalid-feedback">Please provide your vaccination date.</div>
                       </div>
                     </div>
                     <div class="form-group row">
                       <label for="vaccine-type-input" class="col-12 col-md-3 col-form-label">Manufacturer</label>
                       <div class="col-12 col-md-9">
-                        <select class="form-control" name="vaccine-type" id="vaccine-type-input-1">
+                        <select class="form-control" name="vaccine-type" id="vaccine-type-input-1" required>
                           <option selected value="1">Pfizer BioNTech Manufacturing
                             GmbH</option>
                           <option value="2">AstraZeneca, AB</option>
@@ -156,6 +173,7 @@
                           <option value="6">Sinoharm/BIBP</option>
                           <option value="7">Other</option>
                         </select>
+                        <div class="invalid-feedback">Please select the manufacurer name.</div>
                       </div>
                     </div>
                   </div>
@@ -169,6 +187,18 @@
                   </div>
                 </div>
               </fieldset>
+
+              <fieldset>
+                  <div class="form-group row">Thanks for your submission!</div>
+
+                  <div class="form-group row">
+                    <div class="d-flex justify-content-center">
+                      <a class="return-btn" href="index.html">Return to Home<span class="sr-only">(current)</span></a>
+                    </div>
+                  </div>
+              </fieldset>
+
+              
             </form>
           </div>
 

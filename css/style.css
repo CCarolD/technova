@@ -8,6 +8,10 @@ nav {
   color: #1f7341;
   font-weight: bold; }
 
+a {
+  text-decoration: none;
+  border-radius: 10px; }
+
 a:hover, a:focus {
   color: #1f7341; }
 
@@ -22,8 +26,9 @@ a:hover, a:focus {
   width: 150px; }
 
 .nav-item a:hover, .nav-item a:focus {
-  background-color: #1f7341;
-  color: #fff !important; }
+  background-image: linear-gradient(to top left, #6ed197, #1f7341);
+  color: #e9f0ec !important;
+  text-shadow: 1px 1px 1px #5c5e5d; }
 
 button.navbar-toggler {
   padding-right: 1rem;
