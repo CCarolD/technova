@@ -1,14 +1,28 @@
 google.charts.load("current", {
-    packages: ["corechart"]
+    packages: ["corechart", "bar"]
 });
 google.charts.setOnLoadCallback(drawChart);
 
+const vacTypeArr = [
+    'Pfizer BioNTech Manufacturing GmbH',
+    "AstraZeneca, AB",
+    "Moderna Biotech",
+    "Janssen–Cilag International NV",
+    "Sinovac",
+    "Sinoharm/BIBP",
+    "Other",
+];
+
+const visaStatusArr = [
+    "Canadian",
+    "Canadian Permanent Resident",
+    "International"
+];
+
 async function drawChart() {
 
-    var mydata = await setDistrib([], (vacDistribution, vacMap) => {
-        console.log(vacDistribution);
-        console.log(vacMap);
-        console.log(vacMap["Pfizer BioNTech Manufacturing GmbH"]);
+    // Pie chart
+    await setDistrib([], (vacDistribution, vacMap) => {
         var data = google.visualization.arrayToDataTable([
             ["Name of Manufacturer", "Sum"],
             ["Pfizer BioNTech Manufacturing GmbH", vacDistribution[vacMap["Pfizer BioNTech Manufacturing GmbH"]]],
@@ -27,26 +41,64 @@ async function drawChart() {
         var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
 
         chart.draw(data, options);
+
+        var tableData = [];
+        for (var i = 0; i < vacTypeArr.length; ++i) {
+            tableData.push({
+                name: vacTypeArr[i],
+                value: vacDistribution[vacMap[vacTypeArr[i]]]
+            });
+        }
+        console.log(tableData); //这里的数据可以用来画个表格
     });
+
+    // Bar graph
+    await setVisaDistrib({}, (dbData) => {
+
+        function getVisaObj(type) {
+
+            let visaObj = visaStatusArr.map((state) => {
+                if (!dbData[type][state]) {
+                    console.log(type, state);
+                    return 0;
+
+                }
+                return dbData[type][state][0];
+            });
+            return visaObj;
+        }
+        var data = google.visualization.arrayToDataTable([
+            ['Visa Status', ...visaStatusArr],
+            ["Pfizer BioNTech Manufacturing GmbH", ...getVisaObj("Pfizer BioNTech Manufacturing GmbH")],
+            ["AstraZeneca, AB", ...getVisaObj("AstraZeneca, AB")],
+            ["Moderna Biotech", ...getVisaObj("Moderna Biotech")],
+            ["Janssen–Cilag International NV", ...getVisaObj("Janssen–Cilag International NV")],
+            ["Sinovac", ...getVisaObj("Sinovac")],
+            ["Sinoharm/BIBP", ...getVisaObj("Sinoharm/BIBP")],
+            ["Other", ...getVisaObj("Other")]
+        ]);
+
+        var options = {
+            chart: {
+                title: 'Types of Vaccine',
+                subtitle: '@ University of Waterloo Health Centre',
+            },
+            bars: '' // Required for Material Bar Charts.
+        };
+
+        var chart = new google.charts.Bar(document.getElementById('barchart_div'));
+
+        chart.draw(data, google.charts.Bar.convertOptions(options));
+    });
+
 }
 
-const vacTypeArr = [
-    "Pfizer BioNTech Manufacturing GmbH",
-    "AstraZeneca, AB",
-    "Moderna Biotech",
-    "Janssen–Cilag International NV",
-    "Sinovac",
-    "Sinoharm/BIBP",
-    "Other",
-];
 
-const getTypeSize = async(vacType) => {
-    const first = await fetchFirstVacType(vacType);
-    const second = await fetchSecondVacType(vacType);
-    return first + second + 0;
+const getTypeSize = async(vacType, visa) => {
+    const first = await fetchFirstVacType(vacType, visa);
+    const second = await fetchSecondVacType(vacType, visa);
+    return [first + second + 0, first, second];
 }
-
-
 
 $(function() {
     // html.html navbar一栏，设置active class
@@ -55,25 +107,28 @@ $(function() {
         $('#table-link').removeClass('active');
         $('#summary-link').addClass('active');
     });
-    /*let vacDistribution = [{}, {}, {}, {}, {}, {}, {}];
-    vacTypeArr.forEach(async function(type, i) {
-        let len = await getTypeSize(type);
-        const obj = {
-            value: len,
-            name: type
-        };
-        vacDistribution[i] = obj;
-    });
-    renderVacType(vacDistribution);*/
+    setVisaDistrib();
 });
 
 const renderVacType = (data) => {
     console.log(data);
 }
 
-const fetchFirstVacType = async(vacType) => {
+const fetchFirstVacType = async(vacType, visa) => {
     let data;
-    const res = await fetch(`http://localhost:5000/data?firstDoseManufacturer=${vacType}`, {
+    if (visa) {
+        await fetch(`http://localhost:5000/data?firstDoseManufacturer=${vacType}&visa=${visa}`, {
+                method: 'GET',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+            }).then(response => response.json())
+            .then(temp => {
+                data = temp;
+            });
+        return data.length;
+    }
+    await fetch(`http://localhost:5000/data?firstDoseManufacturer=${vacType}`, {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json'
@@ -85,8 +140,21 @@ const fetchFirstVacType = async(vacType) => {
     return data.length;
 }
 
-const fetchSecondVacType = async(vacType) => {
+const fetchSecondVacType = async(vacType, visa) => {
     let data;
+    if (visa) {
+        await fetch(
+                `http://localhost:5000/data?secondDoseManufacturer=${vacType}&visa=${visa}`, {
+                    method: 'GET',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                }).then(response => response.json())
+            .then(temp => {
+                data = temp;
+            });
+        return data.length;
+    }
     await fetch(`http://localhost:5000/data?secondDoseManufacturer=${vacType}`, {
             method: 'GET',
             headers: {
@@ -103,18 +171,33 @@ async function setDistrib(vacDistribution, func) {
     vacMap = {};
     await new Promise((resolve) => {
         vacTypeArr.forEach(async function(type, i) {
-            let len = await getTypeSize(type);
-            vacDistribution.push(len);
-            console.log(i, vacDistribution);
+            let size = await getTypeSize(type);
+            vacDistribution.push(size[0]);
             vacMap[type] = vacDistribution.length - 1;
             if (vacDistribution.length === 7) {
                 resolve();
             }
         });
     });
-
-    console.log(vacDistribution);
     func(vacDistribution, vacMap);
     return vacDistribution;
+}
 
+async function setVisaDistrib(distrib, func) {
+    vacMap = {};
+    distrib = {};
+    await new Promise((resolve) => {
+        vacTypeArr.forEach(async function(type, i) {
+            distrib[type] = {};
+            for (var visaIdx = 0; visaIdx < visaStatusArr.length; ++visaIdx) {
+                distrib[type][visaStatusArr[visaIdx]] = await getTypeSize(type, visaStatusArr[visaIdx]);
+            }
+            if (i === 6) {
+                resolve();
+            }
+        });
+    });
+    //console.log(distrib);
+    func(distrib);
+    return distrib;
 }
