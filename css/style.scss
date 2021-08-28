@@ -1,0 +1,32 @@
+$site-c1: #e2f1e8;
+$site-c2: #b0d8c0;
+$site-c3: #469667;
+$site-c4: #1f7341;
+.navbar {
+    padding-left: 1rem;
+}
+
+.banner-color-line {
+    height: 20px;
+}
+
+@mixin setColorBlock($bg-color, $h: 100%) {
+    background-color: $bg-color;
+    height: $h
+}
+
+.banner-1 {
+    @include setColorBlock($site-c1);
+}
+
+.banner-2 {
+    @include setColorBlock($site-c2);
+}
+
+.banner-3 {
+    @include setColorBlock($site-c3);
+}
+
+.banner-4 {
+    @include setColorBlock($site-c4);
+}

@@ -1,0 +1,21 @@
+{
+    "type": [{
+        "name": "Pfizer"
+    }, {
+        "name": "Mordena"
+    }, {
+        "name": "Sinovac"
+    }],
+    "data": [{
+        "id": 1,
+        "studentId": 20000000,
+        "faculty": "MATH",
+        "lastName": "Waterloo",
+        "firstName": "Goose",
+        "doseNum": 2,
+        "firstDoseManufacturer": "Pfizer",
+        "firstDoseDate": "2021-03-21",
+        "secondDoseManufacturer": "Mordena",
+        "secondDoseDate": "2021-05-03"
+    }]
+}

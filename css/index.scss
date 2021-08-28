@@ -1,0 +1,35 @@
+$icon-dark: #0a863e;
+$card-border-radius: 10px;
+.index-icon {
+    color: $icon-dark;
+    align-self: center;
+    justify-self: center;
+}
+
+.container {
+    .container-row {
+        padding: 1rem 0 2rem 0;
+    }
+}
+
+.card {
+    border-radius: $card-border-radius;
+    .card-header {
+        border-radius: ($card-border-radius - 1px) ($card-border-radius - 1px) 0 0;
+        h4 {
+            margin: 0.5rem 0 0 0;
+        }
+    }
+    .row {
+        margin: 5px 0;
+    }
+}
+
+#add-form fieldset:not(:first-of-type) {
+    display: none;
+}
+
+.next,
+.prev {
+    margin: 0 5px;
+}
