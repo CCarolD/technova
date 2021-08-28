@@ -1,88 +1,22 @@
 {
-  "type": [
-    {
-      "name": "Pfizer"
-    },
-    {
-      "name": "Mordena"
-    },
-    {
-      "name": "Sinovac"
-    }
-  ],
-  "data": [
-    {
-      "id": 1,
-      "studentId": 20000000,
-      "faculty": "MATH",
-      "visa": "Canadian",
-      "lastName": "Waterloo",
-      "firstName": "Goose",
-      "doseNum": 2,
-      "firstDoseManufacturer": "Pfizer",
-      "firstDoseDate": "2021-03-21",
-      "secondDoseManufacturer": "Mordena",
-      "secondDoseDate": "2021-05-03"
-    },
-    {
-      "lastName": "Mosunov",
-      "firstName": "Anton",
-      "id": 2
-    },
-    {
-      "lastName": "Mosunov",
-      "firstName": "Anton",
-      "id": 3
-    },
-    {
-      "lastName": "Mosunov",
-      "firstName": "Anton",
-      "id": 4
-    },
-    {
-      "lastName": "Mosunov",
-      "firstName": "Anton",
-      "id": 5
-    },
-    {
-      "lastName": "Mosunov",
-      "firstName": "Anton",
-      "id": 6
-    },
-    {
-      "lastName": "Mosunov",
-      "firstName": "Anton",
-      "id": 7
-    },
-    {
-      "lastName": "Mosunov",
-      "firstName": "Anton",
-      "id": 8
-    },
-    {
-      "lastName": "Mosunov",
-      "firstName": "Anton",
-      "id": 9
-    },
-    {
-      "lastName": "Mosunov",
-      "firstName": "Anton",
-      "id": 10
-    },
-    {
-      "lastName": "Mosunov",
-      "firstName": "Anton",
-      "id": 11
-    },
-    {
-      "lastName": "Mosunov",
-      "firstName": "Anton",
-      "id": 12
-    },
-    {
-      "lastName": "Mosunov",
-      "firstName": "Anton",
-      "id": 13
-    }
-  ]
+    "type": [{
+        "name": "Pfizer"
+    }, {
+        "name": "Mordena"
+    }, {
+        "name": "Sinovac"
+    }],
+    "data": [{
+        "id": "1",
+        "studentId": "20000000",
+        "faculty": "MATH",
+        "visa": "Canadian",
+        "lastName": "Waterloo",
+        "firstName": "Goose",
+        "doseNum": 2,
+        "firstDoseManufacturer": "Pfizer",
+        "firstDoseDate": "2021-03-21",
+        "secondDoseManufacturer": "Mordena",
+        "secondDoseDate": "2021-05-03"
+    }]
 }

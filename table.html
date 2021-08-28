@@ -15,15 +15,42 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Oxygen&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/css/style.css">
-  <!-- endbuild -->
+  <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />--> 
+  <!-- endbuild -->  
 </head>
 
-<body>
+<body> 
   <div id="navBar"></div>
+  <br />
   <button type="button" class="btn btn-primary" id="search-btn">Search</button>
-  <div id="data-table">
+  
+  <div>
+      <h1>Records of All Registered Students</h1>
+      <br />
+      <table class="table table-bordered table-striped">
+        <tr>
+            <th>id</th>
+            <th>Family Name</th>
+            <th>First Name</th>
+            <th>student ID</th>
+            <th>Faculty</th>
+            <th>Vaccination Status</th>
+            <th>Number of Doses</th>
+            <th>1st Dose's Manufacturer</th>
+            <th>Date of 1st Injection</th>
+            <th>2nd Dose's Manufacturer</th>
+            <th>Date of 2nd Injection</th>
+        </tr>
+        <tbody id="myTable">
+            
+        </tbody>
 
-
+        
+        
+      </table> 
+      
   </div>
 
   <!-- build:js js/main.js -->
@@ -31,10 +58,10 @@
   <script src="/node_modules/popper.js/dist/umd/popper.min.js"></script>
   <script src="/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
   <script src="/js/table.js"></script>
-  <script>
-    // 在这里写新的
-  </script>
+
   <!-- endbuild -->
+  
 </body>
 
 </html>
+
