@@ -55,7 +55,7 @@
           <h4>Submit your vaccination information</h4>
         </div>
         <div class="card-body">
-          <form class="needs-validation" id="add-form" novalidate>
+          <form class="needs-validation" id="add-form">
             <fieldset>
               <div class="form-card">
                 <div class="form-group row">
@@ -131,14 +131,14 @@
                   <div class="form-group row">
                     <label for="vaccine-date-input" class="col-12 col-md-3 col-form-label">Date</label>
                     <div class="col-12 col-md-9">
-                      <input class="form-control" type="date" name="vaccine-date" id="vaccine-date-input-1" required>
+                      <input class="form-control" type="date" name="vaccine-date" id="vaccine-date-input-1">
                       <div class="invalid-feedback">Please provide your vaccination date.</div>
                     </div>
                   </div>
                   <div class="form-group row">
                     <label for="vaccine-type-input" class="col-12 col-md-3 col-form-label">Manufacturer</label>
                     <div class="col-12 col-md-9">
-                      <select class="form-control" name="vaccine-type" id="vaccine-type-input-1" required>
+                      <select class="form-control" name="vaccine-type" id="vaccine-type-input-1">
                           <option selected value="1">Pfizer BioNTech Manufacturing
                             GmbH</option>
                           <option value="2">AstraZeneca, AB</option>
@@ -157,14 +157,14 @@
                   <div class="form-group row">
                     <label for="vaccine-date-input" class="col-12 col-md-3 col-form-label">Date</label>
                     <div class="col-12 col-md-9">
-                      <input class="form-control" type="date" name="vaccine-date" id="vaccine-date-input-1" required>
+                      <input class="form-control" type="date" name="vaccine-date" id="vaccine-date-input-1">
                       <div class="invalid-feedback">Please provide your vaccination date.</div>
                     </div>
                   </div>
                   <div class="form-group row">
-                    <label for="vaccine-type-input" class="col-12 col-md-3 col-form-label">Manufacturer</label>
+                    <label for="vaccine-type-input-1" class="col-12 col-md-3 col-form-label">Manufacturer</label>
                     <div class="col-12 col-md-9">
-                      <select class="form-control" name="vaccine-type" id="vaccine-type-input-1" required>
+                      <select class="form-control" name="vaccine-type" id="vaccine-type-input-1">
                           <option selected value="1">Pfizer BioNTech Manufacturing
                             GmbH</option>
                           <option value="2">AstraZeneca, AB</option>
@@ -183,7 +183,7 @@
                   <div class="d-flex justify-content-center">
                     <input type="button" name="prev" class="btn btn-secondary prev action-button" value="Previous" />
 
-                    <input type="button" name="next" id="submit-btn" class="btn btn-primary next action-button" value="Submit" />
+                    <input type="button" name="next" id="submit-btn" class="btn btn-primary next action-button submit-btn" value="Submit" />
                   </div>
                 </div>
               </div>
