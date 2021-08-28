@@ -25,6 +25,7 @@ $(function() {
         $('#table-link').removeClass('active');
         $('#summary-link').removeClass('active');
     });
+    $("#first-dose").hide();
     $("#second-dose").hide();
 });
 
@@ -78,12 +79,18 @@ $(".prev").click(function() {
 
 $("#dose-num-input").on("change", function() {
     if (this.value === "2") {
+        $("#first-dose").show();
         $("#second-dose").show();
+    } else if (this.value === "1") {
+        $("#first-dose").show();
+        $("#second-dose").hide();
     } else {
+        $("#first-dose").hide();
         $("#second-dose").hide();
     }
 });
 
 $("#submit-btn").on("change", function() {
-
+    var newRecord = bindFormData();
+    addRecord(newRecord);
 });
