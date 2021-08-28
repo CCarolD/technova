@@ -91,6 +91,21 @@ async function drawChart() {
         chart.draw(data, google.charts.Bar.convertOptions(options));
     });
 
+    await setFullyVaccined((total, valid) => {
+        var data = google.visualization.arrayToDataTable([
+            ['Immunization State', 'Percentage'],
+            ['Valid', valid],
+            ['Invalid', total - valid]
+        ]);
+
+        var options = {
+            title: 'Percentage of Fully Vaccined Students',
+            pieHole: 0.4,
+        };
+
+        var chart = new google.visualization.PieChart(document.getElementById('fully_vaccined_div'));
+        chart.draw(data, options);
+    })
 }
 
 
@@ -107,6 +122,7 @@ $(function() {
         $('#table-link').removeClass('active');
         $('#summary-link').addClass('active');
     });
+    $('#footer').load('footer.html');
     setVisaDistrib();
 });
 
@@ -167,6 +183,26 @@ const fetchSecondVacType = async(vacType, visa) => {
     return data.length;
 }
 
+const fetchRecords = async() => {
+    const res = await fetch('http://localhost:5000/data');
+    data = await res.json();
+    return data.length;
+}
+
+const fetchFullyVaccined = async() => {
+    await fetch(
+            `http://localhost:5000/data?doseNum=2`, {
+                method: 'GET',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+            }).then(response => response.json())
+        .then(temp => {
+            data = temp;
+        });
+    return data.length;
+}
+
 async function setDistrib(vacDistribution, func) {
     vacMap = {};
     await new Promise((resolve) => {
@@ -200,4 +236,10 @@ async function setVisaDistrib(distrib, func) {
     //console.log(distrib);
     func(distrib);
     return distrib;
+}
+
+async function setFullyVaccined(func) {
+    var total = await fetchRecords();
+    var valid = await fetchFullyVaccined();
+    func(total, valid);
 }

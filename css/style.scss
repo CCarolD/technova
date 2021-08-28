@@ -2,7 +2,6 @@ $site-c1: #e2f1e8;
 $site-c2: #b0d8c0;
 $site-c3: #469667;
 $site-c4: #1f7341;
-
 nav {
     background-color: #fff;
     font-family: 'Oxygen', sans-serif;
@@ -11,7 +10,7 @@ nav {
     border-image-slice: 10;
     border-top: 0;
     border-left: 0;
-    border-right: 0;    
+    border-right: 0;
     display: flex;
     justify-content: center;
 }
@@ -28,7 +27,9 @@ nav {
     margin-right: 2rem;
 }
 
+
 /********** Medium devices only **********/
+
 @media (min-width: 768px) and (max-width: 1199px) {
     nav {
         background-color: #fff;
@@ -42,7 +43,9 @@ nav {
     }
 }
 
+
 /********** Extra small devices only **********/
+
 @media (max-width: 767px) {
     .navbar-brand {
         font-size: 1.5em;
@@ -67,7 +70,8 @@ a {
     border-radius: 10px;
 }
 
-a:hover, a:focus {
+a:hover,
+a:focus {
     color: $site-c4;
 }
 
@@ -81,7 +85,8 @@ a:hover, a:focus {
     width: 150px;
 }
 
-li a:hover, li a:focus {
+li a:hover,
+li a:focus {
     background-image: linear-gradient(to top left, #6ed197, #1f7341);
     color: rgb(233, 240, 236) !important;
     text-shadow: 1px 1px 1px rgb(92, 94, 93);
@@ -156,29 +161,29 @@ button.navbar-toggler {
 
 h1 {
     text-align: center;
-  }
-  
-  table {
+}
+
+table {
     width: 100%;
     margin-right: 20px;
-  }
-  
-  button {
+}
+
+button {
     margin-left: 30px;
-  }
-  
-  td {
+}
+
+td {
     font-weight: bold;
     border: 1px solid black;
     padding: 10px;
     text-align: center;
-  }
-  
-  td {
+}
+
+td {
     font-weight: lighter;
-  }
-  
-  #searchBar {
+}
+
+#searchBar {
     width: 95%;
     height: 32px;
     border-radius: 3px;
@@ -186,16 +191,23 @@ h1 {
     padding: 5px 10px;
     font-size: 14px;
     margin-left: 30px;
-  
-  }
-  
-  #searchWrapper {
+}
+
+#searchWrapper {
     position: relative;
-  }
-  
-  #searchWrapper::after {
+}
+
+#searchWrapper::after {
     content: '🔍';
     position: absolute;
     top: 7px;
     right: 15px;
-  }
+}
+
+footer {
+    background-color: $site-c1;
+    padding-top: 20px;
+    .row {
+        margin: 20px 0 0 0;
+    }
+}
