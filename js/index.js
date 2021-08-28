@@ -27,12 +27,12 @@ function bindFormData() {
     if (Number(dose) >= 1) {
         manufacturer1 = document.getElementsByClassName('form-control')[7];
         _firstDoseManufacturer = manufacturer1.options[manufacturer1.selectedIndex].text;
-        _firstDoseDate = document.getElementsByClassName('form-control')[6];
+        _firstDoseDate = document.getElementsByClassName('form-control')[6].value;
     }
     if (dose === '2') {
         manufacturer2 = document.getElementsByClassName('form-control')[9];
         _secondDoseManufacturer = manufacturer2.options[manufacturer2.selectedIndex].text;
-        _secondDoseDate = document.getElementsByClassName('form-control')[8];
+        _secondDoseDate = document.getElementsByClassName('form-control')[8].value;
     }
     const info = {
         studentId: document.querySelector('#student-id-input').value,
