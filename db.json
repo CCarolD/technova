@@ -10,6 +10,7 @@
         "id": 1,
         "studentId": 20000000,
         "faculty": "MATH",
+        "visa": "Canadian",
         "lastName": "Waterloo",
         "firstName": "Goose",
         "doseNum": 2,
