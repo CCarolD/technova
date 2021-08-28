@@ -30,12 +30,44 @@
   </style>
 </head>
 
-<body>
+<body> 
   <div id="navBar"></div>
-  <button type="button" class="btn btn-primary" id="search-btn">Search</button>
-  <div id="data-table">
+  <br />
+  <div id="searchWrapper">
+    <input
+        type="text"
+        name="searchBar"
+        id="searchBar"
+        placeholder="search for a student ID"
+    />
+  </div>
+  <!--<button type="button" class="btn btn-primary" id="search-btn">Search</button>-->
+  <br />
+  <div>
+      <h1>Records of All Registered Students</h1>
+      <br />
+      <table class="table table-bordered table-striped">
+        <tr>
+            <th>id</th>
+            <th>Family Name</th>
+            <th>First Name</th>
+            <th>student ID</th>
+            <th>Faculty</th>
+            <th>Vaccination Status</th>
+            <th>Number of Doses</th>
+            <th>1st Dose's Manufacturer</th>
+            <th>Date of 1st Injection</th>
+            <th>2nd Dose's Manufacturer</th>
+            <th>Date of 2nd Injection</th>
+        </tr>
+        <tbody id="myTable">
+            
+        </tbody>
 
-
+        
+        
+      </table> 
+      
   </div>
 
   <!-- build:js js/main.js -->
@@ -43,7 +75,10 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <script src="/node_modules/popper.js/dist/umd/popper.min.js"></script>
   <script src="/js/table.js"></script>
+
   <!-- endbuild -->
+  
 </body>
 
 </html>
+
