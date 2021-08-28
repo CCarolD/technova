@@ -115,6 +115,20 @@ button.navbar-toggler {
     justify-content: center;
 }
 
+.navbar-toggler {
+    clear: both;
+    margin-top: 8px;
+    margin-bottom: 8px;
+}
+
+.navbar-toggler-icon {
+    font-size: 1.2em;
+    color: #1f7341;
+    text-align: center;
+    font-family: 'Oxygen', sans-serif;
+    font-weight: bold;
+}
+
 .banner-color-line {
     height: 20px;
 }
