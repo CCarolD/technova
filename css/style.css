@@ -64,7 +64,8 @@ h1 {
 }
 
 table {
-  width: 95%;
+  width: 100%;
+  margin-right: 20px;
 }
 
 button {
@@ -80,4 +81,26 @@ td {
 
 td {
   font-weight: lighter;
+}
+
+#searchBar {
+  width: 95%;
+  height: 32px;
+  border-radius: 3px;
+  border: 1px solid #eaeaea;
+  padding: 5px 10px;
+  font-size: 14px;
+  margin-left: 30px;
+
+}
+
+#searchWrapper {
+  position: relative;
+}
+
+#searchWrapper::after {
+  content: '🔍';
+  position: absolute;
+  top: 7px;
+  right: 15px;
 }

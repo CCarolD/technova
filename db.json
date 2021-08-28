@@ -18,5 +18,18 @@
         "firstDoseDate": "2021-03-21",
         "secondDoseManufacturer": "Mordena",
         "secondDoseDate": "2021-05-03"
+    }, 
+    {
+        "id": "1",
+        "studentId": "20909745",
+        "faculty": "MATH",
+        "visa": "Canadian",
+        "lastName": "Waterloo",
+        "firstName": "Goose",
+        "doseNum": 2,
+        "firstDoseManufacturer": "Pfizer",
+        "firstDoseDate": "2021-03-21",
+        "secondDoseManufacturer": "Mordena",
+        "secondDoseDate": "2021-05-03"
     }]
 }
