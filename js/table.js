@@ -5,24 +5,26 @@ $(function() {
         $('#table-link').addClass('active');
         $('#summary-link').removeClass('active');
     });
+
+    let dataset = fetchRecords((data) => {
+        buildTable(data);
+    });
+
 });
 
 // 用来从db.json中取数据的函数
-const fetchRecords = async() => {
+const fetchRecords = async(func) => {
     const res = await fetch('http://localhost:5000/data');
     const data = await res.json();
     //console.log(data);
+    func(data);
     return data;
 }
 
-
-
-let dataset = fetchRecords();
-
-function buildTable(data){
+function buildTable(data) {
     var table = document.getElementById("myTable");
     console.log(data.length);
-    for (var i = 0; i < data.length; i++){
+    for (var i = 0; i < data.length; i++) {
         var row = `<tr>
                         <td>${data[i].id}</td>
                         <td>${data[i].lastName}</td>
@@ -40,6 +42,3 @@ function buildTable(data){
         table.innerHTML += row;
     }
 }
-
-buildTable(dataset);
-
