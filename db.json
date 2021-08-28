@@ -1,35 +1,85 @@
 {
-    "type": [{
-        "name": "Pfizer"
-    }, {
-        "name": "Mordena"
-    }, {
-        "name": "Sinovac"
-    }],
-    "data": [{
-        "id": "1",
-        "studentId": "20000000",
-        "faculty": "MATH",
-        "visa": "Canadian",
-        "lastName": "Waterloo",
-        "firstName": "Goose",
-        "doseNum": 2,
-        "firstDoseManufacturer": "Pfizer",
-        "firstDoseDate": "2021-03-21",
-        "secondDoseManufacturer": "Mordena",
-        "secondDoseDate": "2021-05-03"
-    }, 
+  "type": [
     {
-        "id": "1",
-        "studentId": "20909745",
-        "faculty": "MATH",
-        "visa": "Canadian",
-        "lastName": "Waterloo",
-        "firstName": "Goose",
-        "doseNum": 2,
-        "firstDoseManufacturer": "Pfizer",
-        "firstDoseDate": "2021-03-21",
-        "secondDoseManufacturer": "Mordena",
-        "secondDoseDate": "2021-05-03"
-    }]
+      "name": "Pfizer"
+    },
+    {
+      "name": "Mordena"
+    },
+    {
+      "name": "Sinovac"
+    }
+  ],
+  "data": [
+    {
+      "id": "1",
+      "studentId": "20000000",
+      "faculty": "MATH",
+      "visa": "Canadian",
+      "lastName": "Waterloo",
+      "firstName": "Goose",
+      "doseNum": 2,
+      "firstDoseManufacturer": "Pfizer",
+      "firstDoseDate": "2021-03-21",
+      "secondDoseManufacturer": "Mordena",
+      "secondDoseDate": "2021-05-03"
+    },
+    {
+      "id": "2",
+      "studentId": "20909745",
+      "faculty": "MATH",
+      "visa": "Canadian",
+      "lastName": "Waterloo",
+      "firstName": "Goose",
+      "doseNum": 2,
+      "firstDoseManufacturer": "Pfizer",
+      "firstDoseDate": "2021-03-21",
+      "secondDoseManufacturer": "Mordena",
+      "secondDoseDate": "2021-05-03"
+    },
+    {
+      "lastName": "Mosunov",
+      "firstName": "Anton",
+      "id": "DEImjdA"
+    },
+    {
+      "studentId": "123",
+      "faculty": "ENG",
+      "visa": "Canadian Permanent Resident",
+      "lastName": "B",
+      "firstName": "A",
+      "doseNum": "1",
+      "firstDoseManufacturer": "Pfizer BioNTech Manufacturing GmbH",
+      "firstDoseDate": "2021-08-06",
+      "secondDoseManufacturer": "",
+      "secondDoseDate": "",
+      "id": "Nbc2bdw"
+    },
+    {
+      "studentId": "20001234",
+      "faculty": "ARTS",
+      "visa": "Canadian Permanent Resident",
+      "lastName": "Laurier",
+      "firstName": "Goose",
+      "doseNum": "2",
+      "firstDoseManufacturer": "Moderna Biotech",
+      "firstDoseDate": "2021-06-30",
+      "secondDoseManufacturer": "Pfizer BioNTech Manufacturing GmbH",
+      "secondDoseDate": "2021-08-06",
+      "id": "MueJfZ9"
+    },
+    {
+      "studentId": "13131313",
+      "faculty": "MATH",
+      "visa": "International",
+      "lastName": "Potato",
+      "firstName": "Lays",
+      "doseNum": "2",
+      "firstDoseManufacturer": "Pfizer BioNTech Manufacturing GmbH",
+      "firstDoseDate": "2021-08-01",
+      "secondDoseManufacturer": "Pfizer BioNTech Manufacturing GmbH",
+      "secondDoseDate": "2021-08-28",
+      "id": "7gJQHQo"
+    }
+  ]
 }

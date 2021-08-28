@@ -1,8 +1,4 @@
 const addRecord = async(record) => {
-    record = {
-        lastName: 'Mosunov',
-        firstName: 'Anton'
-    };
     const res = await fetch('http://localhost:5000/data', {
         method: 'POST',
         headers: {
