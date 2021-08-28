@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vaccination Record</title>
+
+  <!-- Bootstrap CSS -->
+  <!-- build:css css/main.css -->
+  <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="./node_modules/font-awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/index.css">
+  <!-- endbuild -->
+</head>
+
+<body>
+  <div id="navBar"></div>
+  <div class="container">
+    <div class="container-row row">
+      <div class="col-4 d-flex justify-content-center">
+        <i class="fa fa-heartbeat index-icon fa-5x" aria-hidden="true"></i>
+      </div>
+      <div class="col-4 d-flex justify-content-center">
+        <i class="fa fa-ambulance index-icon fa-5x" aria-hidden="true"></i>
+      </div>
+      <div class="col-4 d-flex justify-content-center">
+        <i class="fa fa-user-md index-icon fa-5x" aria-hidden="true"></i>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-12 col-md-6">
+
+      </div>
+      <div class="col-12 col-md-6">
+        <div class="form-tip">
+          <h2>Have you get vaccine ... ? </h2>
+        </div>
+        <div class="card col-12">
+          <div class="card-header bg-success text-white d-flex align-items-center">
+            <h4>Submit your vaccination record</h4>
+          </div>
+          <div class="card-body">
+            <form id="add-form">
+              <fieldset>
+                <div class="form-card">
+                  <div class="form-group row">
+                    <label for="first-name-input" class="col-12 col-md-3 col-form-label">Name</label>
+                    <div class="col-12 col-md-4">
+                      <input type="text" class="form-control" name="name" id="first-name-input" placeholder="First Name">
+                    </div>
+                    <div class="col-12 col-md-4">
+                      <input type="text" class="form-control" name="name" id="last-name-input" placeholder="Last Name">
+                    </div>
+                  </div>
+
+                  <div class="form-group row">
+                    <label for="student-id-input" class="col-12 col-md-3 col-form-label">Student ID</label>
+                    <div class="col-12 col-md-6">
+                      <input type="text" class="form-control" name="studentId" id="student-id-input" placeholder="12345678">
+                    </div>
+                  </div>
+
+                  <div class="form-group row">
+                    <label for="faculty-input" class="col-12 col-md-3 col-form-label">Faculty</label>
+                    <div class="col-12 col-md-6">
+                      <select class="form-control" name="faculty" id="faculty-input">
+                        <option selected value="1">AHS</option>
+                        <option value="2">ARTS</option>
+                        <option value="3">ENG</option>
+                        <option value="4">ENV</option>
+                        <option value="5">MATH</option>
+                        <option value="6">SCI</option>
+                      </select>
+                    </div>
+                  </div>
+
+                  <div class="form-group row">
+                    <label for="visa-input" class="col-12 col-md-3 col-form-label">Visa Status</label>
+                    <div class="col-12 col-md-6">
+                      <select class="form-control" name="visa" id="visa-input">
+                        <option selected value="1">Canadian</option>
+                        <option value="2">Canadian Permanent Resident</option>
+                        <option value="3">International</option>
+                      </select>
+                    </div>
+                  </div>
+
+                  <div class="form-group row">
+                    <div class="d-flex justify-content-center">
+                      <input type="button" name="next" class="btn btn-primary next action-button" value="Next" />
+                    </div>
+                  </div>
+                </div>
+              </fieldset>
+
+              <fieldset>
+                <div class="form-card">
+                  <div class="form-group row">
+                    <label for="dose-num-input" class="col-12 col-md-4 col-form-label">Number of Doses</label>
+                    <div class="col-12 col-md-2">
+                      <select class="form-control col-12 col-md-6" name="doseNum" id="dose-num-input">
+                        <option selected value="1">1</option>
+                        <option value="2">2</option>
+                      </select>
+                    </div>
+                  </div>
+
+                  <div class="vaccine-info" id="first-dose">
+                    <div class="form-group row">
+                      <label for="vaccine-date-input" class="col-12 col-md-3 col-form-label">Date</label>
+                      <div class="col-12 col-md-9">
+                        <input class="form-control" type="date" name="vaccine-date" id="vaccine-date-input-1">
+                      </div>
+                    </div>
+                    <div class="form-group row">
+                      <label for="vaccine-type-input" class="col-12 col-md-3 col-form-label">Manufacturer</label>
+                      <div class="col-12 col-md-9">
+                        <select class="form-control" name="vaccine-type" id="vaccine-type-input-1">
+                          <option selected value="1">Pfizer BioNTech Manufacturing
+                            GmbH</option>
+                          <option value="2">AstraZeneca, AB</option>
+                          <option value="3">Moderna Biotech</option>
+                          <option value="4">Janssen–Cilag International NV</option>
+                          <option value="5">Sinovac</option>
+                          <option value="6">Sinoharm/BIBP</option>
+                          <option value="7">Other</option>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="vaccine-info" id="second-dose">
+                    <div class="form-group row">
+                      <label for="vaccine-date-input" class="col-12 col-md-3 col-form-label">Date</label>
+                      <div class="col-12 col-md-9">
+                        <input class="form-control" type="date" name="vaccine-date" id="vaccine-date-input-1">
+                      </div>
+                    </div>
+                    <div class="form-group row">
+                      <label for="vaccine-type-input" class="col-12 col-md-3 col-form-label">Manufacturer</label>
+                      <div class="col-12 col-md-9">
+                        <select class="form-control" name="vaccine-type" id="vaccine-type-input-1">
+                          <option selected value="1">Pfizer BioNTech Manufacturing
+                            GmbH</option>
+                          <option value="2">AstraZeneca, AB</option>
+                          <option value="3">Moderna Biotech</option>
+                          <option value="4">Janssen–Cilag International NV</option>
+                          <option value="5">Sinovac</option>
+                          <option value="6">Sinoharm/BIBP</option>
+                          <option value="7">Other</option>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="form-group row">
+                    <div class="d-flex justify-content-center">
+                      <input type="button" name="prev" class="btn btn-secondary prev action-button" value="Previous" />
+
+                      <input type="button" name="next" class="btn btn-primary next action-button" value="Submit" />
+                    </div>
+                  </div>
+                </div>
+              </fieldset>
+            </form>
+          </div>
+
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- build:js js/main.js -->
+  <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+  <script src="/node_modules/popper.js/dist/umd/popper.min.js"></script>
+  <script src="/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+  <!-- endbuild -->
+
+  <script type='text/javascript' src='/js/index.js'></script>
+</body>
+
+</html>
