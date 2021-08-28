@@ -31,7 +31,7 @@ function buildTable(data) {
                         <td>${data[i].firstName}</td>
                         <td>${data[i].studentId}</td>
                         <td>${data[i].faculty}</td>
-                        <td>'Fully Vaccinated'</td>
+                        <td>Fully Vaccinated</td>
                         <td>${data[i].doseNum}</td>
                         <td>${data[i].firstDoseManufacturer}</td>
                         <td>${data[i].firstDoseDate}</td>
