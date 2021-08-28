@@ -25,6 +25,7 @@ $(function() {
         $('#table-link').removeClass('active');
         $('#summary-link').removeClass('active');
     });
+    $("#first-dose").hide();
     $("#second-dose").hide();
 });
 
@@ -78,32 +79,18 @@ $(".prev").click(function() {
 
 $("#dose-num-input").on("change", function() {
     if (this.value === "2") {
+        $("#first-dose").show();
         $("#second-dose").show();
+    } else if (this.value === "1") {
+        $("#first-dose").show();
+        $("#second-dose").hide();
     } else {
+        $("#first-dose").hide();
         $("#second-dose").hide();
     }
 });
 
 $("#submit-btn").on("change", function() {
-    const current_fs = $(this).parent().parent().parent().parent();
-    const next_fs = current_fs.next();
-    next_fs.show();
-    //hide the current fieldset with style
-    current_fs.animate({
-        opacity: 0
-    }, {
-        step: function(now) {
-            // for making fielset appear animation
-            opacity = 1 - now;
-
-            current_fs.css({
-                'display': 'none',
-                'position': 'relative'
-            });
-            next_fs.css({
-                'opacity': opacity
-            });
-        },
-        duration: 600
-    });
+    var newRecord = bindFormData();
+    addRecord(newRecord);
 });
