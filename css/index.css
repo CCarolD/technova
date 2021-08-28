@@ -53,7 +53,9 @@ input.btn:hover.next {
   background-color: #1f7341; }
 
 body {
-  background: linear-gradient(to top, #79ce9b, #f8faf8); }
+  background: linear-gradient(to top, #79ce9b, #f8faf8);
+  background-size: cover;
+  background-repeat: no-repeat; }
 
 .subtitle h2 {
   font-family: 'Oxygen', sans-serif;
@@ -61,7 +63,9 @@ body {
   font-weight: bolder;
   background-image: linear-gradient(to top left, #6ed197, #1f7341);
   height: 1.5em;
+  background-size: cover;
   -webkit-background-clip: text;
+  background-clip: text;
   color: transparent; }
 
 #first {

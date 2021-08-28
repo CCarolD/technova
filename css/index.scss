@@ -76,6 +76,8 @@ input.btn:hover.next {
 
 body {
     background: linear-gradient(to top, #79ce9b, rgb(248, 250, 248));
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
 .subtitle h2 {
@@ -83,7 +85,9 @@ body {
     font-size: 3.5em;
     font-weight: bolder;
     background-image: linear-gradient(to top left, rgb(110, 209, 151), #1f7341); height: 1.5em;
+    background-size: cover;
     -webkit-background-clip: text;
+    background-clip: text;
     color: transparent;
 }
 
