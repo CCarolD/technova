@@ -2,8 +2,48 @@ $site-c1: #e2f1e8;
 $site-c2: #b0d8c0;
 $site-c3: #469667;
 $site-c4: #1f7341;
-.navbar {
+nav {
+    background-color: #fff;
+    font-family: 'Oxygen', sans-serif;
+}
+
+.navbar-brand {
     padding-left: 1rem;
+    font-size: 2em;
+    color: $site-c4;
+    font-weight: bold;
+}
+
+a:hover, a:focus {
+    color: $site-c4;
+}
+
+.navbar-expand-lg .navbar-nav .nav-link {
+    padding-left: 1rem;
+    font-size: 1.5em;
+    color: $site-c4;
+    margin-left: 30px;
+    padding-right: 20px;
+    padding-left: 20px;
+    text-align: center;
+    width: 150px;
+}
+
+.nav-item a:hover, .nav-item a:focus {
+    background-color: $site-c4;
+    color: #fff !important;
+}
+
+button.navbar-toggler {
+    padding-right: 1rem;
+    padding-left: 1rem;
+    font-family: 'Oxygen', sans-serif;
+    color: $site-c4;
+    text-align: center;
+}
+
+.navbar-toggler-icon {
+    font-weight: bolder;
 }
 
 .banner-color-line {
@@ -12,7 +52,7 @@ $site-c4: #1f7341;
 
 @mixin setColorBlock($bg-color, $h: 100%) {
     background-color: $bg-color;
-    height: $h
+    height: $h;
 }
 
 .banner-1 {
