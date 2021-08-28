@@ -5,17 +5,19 @@ google.charts.setOnLoadCallback(drawChart);
 
 async function drawChart() {
 
-    var mydata = await setDistrib([], (vacDistribution) => {
+    var mydata = await setDistrib([], (vacDistribution, vacMap) => {
         console.log(vacDistribution);
+        console.log(vacMap);
+        console.log(vacMap["Pfizer BioNTech Manufacturing GmbH"]);
         var data = google.visualization.arrayToDataTable([
             ["Name of Manufacturer", "Sum"],
-            ["Pfizer BioNTech Manufacturing GmbH", vacDistribution[0]],
-            ["AstraZeneca, AB", vacDistribution[1]],
-            ["Moderna Biotech", vacDistribution[2]],
-            ["Janssen–Cilag International NV", vacDistribution[3]],
-            ["Sinovac", vacDistribution[4]],
-            ["Sinoharm/BIBP", vacDistribution[5]],
-            ["Other", vacDistribution[6]],
+            ["Pfizer BioNTech Manufacturing GmbH", vacDistribution[vacMap["Pfizer BioNTech Manufacturing GmbH"]]],
+            ["AstraZeneca, AB", vacDistribution[vacMap["AstraZeneca, AB"]]],
+            ["Moderna Biotech", vacDistribution[vacMap["Moderna Biotech"]]],
+            ["Janssen–Cilag International NV", vacDistribution[vacMap["Janssen–Cilag International NV"]]],
+            ["Sinovac", vacDistribution[vacMap["Sinovac"]]],
+            ["Sinoharm/BIBP", vacDistribution[vacMap["Sinoharm/BIBP"]]],
+            ["Other", vacDistribution[vacMap["Other"]]],
         ]);
 
         var options = {
@@ -98,11 +100,13 @@ const fetchSecondVacType = async(vacType) => {
 }
 
 async function setDistrib(vacDistribution, func) {
+    vacMap = {};
     await new Promise((resolve) => {
         vacTypeArr.forEach(async function(type, i) {
             let len = await getTypeSize(type);
             vacDistribution.push(len);
-            console.log(i, vacDistribution)
+            console.log(i, vacDistribution);
+            vacMap[type] = vacDistribution.length - 1;
             if (vacDistribution.length === 7) {
                 resolve();
             }
@@ -110,7 +114,7 @@ async function setDistrib(vacDistribution, func) {
     });
 
     console.log(vacDistribution);
-    func(vacDistribution);
+    func(vacDistribution, vacMap);
     return vacDistribution;
 
 }
