@@ -7,8 +7,8 @@
         "name": "Sinovac"
     }],
     "data": [{
-        "id": 1,
-        "studentId": 20000000,
+        "id": "1",
+        "studentId": "20000000",
         "faculty": "MATH",
         "visa": "Canadian",
         "lastName": "Waterloo",

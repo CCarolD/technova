@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vaccination Table</title>
+
+  <!-- Bootstrap CSS -->
+  <!-- build:css css/main.css -->
+  <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="./node_modules/font-awesome/css/font-awesome.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oxygen&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css"> 
+  <!-- endbuild -->  
+</head>
+
+<body> 
+  <div id="navBar"></div>
+  <br />
+  <button type="button" class="btn btn-primary" id="search-btn">Search</button>
+  
+  <div id="data-table">
+    <h1>Records of All Registered Students</h1>
+    <br />
+    <table class="table table-bordered table-striped" id="student_table">
+      <tr  class="bg-data">
+          <th>id</th>
+          <th>Family Name</th>
+          <th>First Name</th>
+          <th>student ID</th>
+          <th>Faculty</th>
+          <th>Vaccination Status</th>
+          <th>Number of Doses</th>
+          <th>1st Dose's Manufacturer</th>
+          <th>Date of 1st Injection</th>
+          <th>2nd Dose's Manufacturer</th>
+          <th>Date of 2nd Injection</th>
+      </tr>
+      <!--<tbody id="myTable">
+          
+      </tbody>-->
+    </table>
+    
+  </div>
+
+  <!-- build:js js/main.js -->
+  <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+  <script src="/node_modules/popper.js/dist/umd/popper.min.js"></script>
+  <script src="/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+  <script src="/js/table.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />-->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+  <!-- endbuild -->
+  <script>
+    $(document).ready(function () {
+      
+  
+        // FETCHING DATA FROM JSON FILE
+        $.getJSON("../data.json", 
+                function (data) {
+            var student_data = '';
+  
+            // ITERATING THROUGH OBJECTS
+            $.each(data, function (key, value) {
+  
+                //CONSTRUCTION OF ROWS HAVING
+                // DATA FROM JSON OBJECT
+                student += '<tr>';
+                student += '<td>' + value.id + '</td>';
+                student += '<td>' + value.lastName + '</td>';
+                student += '<td>' + value.firstName + '</td>';
+                student += '<td>' + value.studentId + '</td>';
+                student += '<td>' + value.faculty + '</td>';
+                student += '<td>' + 'Fully Vaccinated' + '</td>'  // change later
+                student += '<td>' + value.doseNum + '</td>';
+                student += '<td>' + value.firstDoseManufacturer + '</td>';
+                student += '<td>' + value.firstDoseDate + '</td>';
+                student += '<td>' + value.secondDoseManufacturer + '</td>';
+                student += '<td>' + value.secondDoseDate + '</td>';
+                student += '</tr>';
+            });
+              
+            //INSERTING ROWS INTO TABLE 
+            $('#student_table').append(student_data);
+        });
+    });
+  </script>
+</body>
+
+</html>
