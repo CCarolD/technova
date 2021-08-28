@@ -5,6 +5,39 @@
 
 .container .container-row {
   padding: 1rem 0 2rem 0; }
+  
+#main-subtitle {
+  float: left;
+  width: 70%;
+  box-sizing: border-box;
+}
+
+#sidebar {
+  float: right;
+  width: 30%;
+  box-sizing: border-box;
+  padding: 80px 10px;
+}
+
+#sidebar a:hover {
+  text-decoration: underline;
+}
+#sidebar a {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-style:italic;
+  color:green;
+  font-size: 20px;
+}
+
+#sidebar a:visited {
+  color: rgb(3, 70, 3);
+}
+
+#sidebar li {
+  font-size: large;
+  color:#79ce9b;
+  padding: 25px 10px;
+}
 
 .row {
   margin-bottom: 30px; }
@@ -13,13 +46,26 @@
   border-radius: 10px;
   padding: 0;
   font-family: 'Oxygen', sans-serif; }
-  .card .card-header {
-    border-radius: 10px 10px 0 0;
-    margin: 0; }
-    .card .card-header h4 {
-      margin: 0.25rem 0 0 0; }
-  .card .row {
-    margin: 5px 0; }
+
+.card .card-header {
+  border-radius: 10px 10px 0 0;
+  margin: 0; }
+
+.card .card-header h4 {
+  margin: 0.25rem 0 0 0; }
+
+.card .row {
+  margin: 5px 0; }
+
+.card .card-body {
+  float: left;
+  width: 70%;
+  box-sizing: border-box;
+}
+
+form, img {
+  display: inline;
+}
 
 .btn-primary {
   color: #1f7341;
@@ -57,9 +103,9 @@ body {
   background-size: cover;
   background-repeat: no-repeat; }
 
-.subtitle h2 {
+.subtitle h3{
   font-family: 'Oxygen', sans-serif;
-  font-size: 3.5em;
+  font-size: 3em;
   font-weight: bolder;
   background-image: linear-gradient(to top left, #6ed197, #1f7341);
   height: 1.5em;

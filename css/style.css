@@ -16,6 +16,7 @@ a:hover, a:focus {
   color: #1f7341; }
 
 .navbar-expand-lg .navbar-nav .nav-link {
+  right:0;
   padding-left: 1rem;
   font-size: 1.5em;
   color: #1f7341;
@@ -41,6 +42,7 @@ button.navbar-toggler {
   font-weight: bolder; }
 
 .banner-color-line {
+  width:1224px;
   height: 20px; }
 
 .banner-1 {
@@ -80,4 +82,10 @@ td {
 
 td {
   font-weight: lighter;
+}
+
+body{
+  background-repeat: no-repeat;
+  background-image: url("vaccine.jpeg");
+  background-position: center 30px;
 }
