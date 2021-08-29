@@ -54,7 +54,7 @@ function buildTable(data) {
     for (var i = 0; i < data.length; i++){
         var fullyVac = "Not Fully Vaccinated";
         
-        if (data[i].doseNum === 2) {
+        if (data[i].doseNum === "2") {
             fullyVac = "Fully Vaccinated";
         }
         var row = `<tr>
