@@ -33,31 +33,32 @@
 <body>
   <div id="navBar"></div>
   <br />
-  <div id="searchWrapper">
-    <input type="text" name="searchBar" id="searchBar" placeholder="search for a student ID" />
-  </div>
-  <!--<button type="button" class="btn btn-primary" id="search-btn">Search</button>-->
-  <br />
   <div>
       <h1>Records of All Registered Students</h1>
       <br />
-      <table class="table table-bordered table-striped">
-        <tr>
-            <th>Family Name</th>
-            <th>First Name</th>
-            <th>student ID</th>
-            <th>Faculty</th>
-            <th>Vaccination Status</th>
-            <th>Number of Doses</th>
-            <th>1st Dose's Manufacturer</th>
-            <th>Date of 1st Injection</th>
-            <th>2nd Dose's Manufacturer</th>
-            <th>Date of 2nd Injection</th>
-        </tr>
-        <tbody id="myTable">
+      <div id="searchWrapper">
+        <input type="text" name="searchBar" id="searchBar" placeholder="Search for a student ID" />
+      </div>
+      <br />
+      <div class="scrolls">
+        <table class="table table-bordered table-striped">
+          <tr>
+              <th id="one">Family Name</th>
+              <th id="two">First Name</th>
+              <th id="three">Student ID</th>
+              <th id="four">Faculty</th>
+              <th id="five">Vaccination Status</th>
+              <th id="six">Number of Doses</th>
+              <th id="seven">1st Dose's Manufacturer</th>
+              <th id="eight">Date of 1st Injection</th>
+              <th id="nine">2nd Dose's Manufacturer</th>
+              <th id="ten">Date of 2nd Injection</th>
+          </tr>
+          <tbody id="myTable">
             
-        </tbody>
-      </table>
+          </tbody>
+        </table>
+    </div>
   </div>
 
   <div id="footer"></div>

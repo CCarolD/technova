@@ -35,7 +35,11 @@ async function drawChart() {
         ]);
 
         var options = {
-            title: 'Total Number of Vaccines Students Taken'
+            fontName: 'Oxygen',
+            fontSize: 14.5,
+            titleTextStyle: {fontSize: 18},
+            title: 'Total Number of Vaccines Students Taken',
+            position: 'left'
         };
 
         var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
@@ -49,6 +53,7 @@ async function drawChart() {
                 value: vacDistribution[vacMap[vacTypeArr[i]]]
             });
         }
+        
         console.log(tableData); //这里的数据可以用来画个表格
     });
 
@@ -82,8 +87,16 @@ async function drawChart() {
             chart: {
                 title: 'Types of Vaccine',
                 subtitle: '@ University of Waterloo Health Centre',
+                fontName: 'Oxygen',
+                position: 'bottom',
+                
             },
-            bars: '' // Required for Material Bar Charts.
+            titleTextStyle: {fontSize: 18, color: 'black', bold: true},
+            bars: '', // Required for Material Bar Charts.
+            fontName: 'Oxygen',
+            fontSize: 13,
+            titlePosition: 'none',
+            legend: {position: "none"}
         };
 
         var chart = new google.charts.Bar(document.getElementById('barchart_div'));
@@ -101,6 +114,10 @@ async function drawChart() {
         var options = {
             title: 'Percentage of Fully Vaccined Students',
             pieHole: 0.4,
+            fontName: 'Oxygen',
+            fontSize: 14.5,
+            titleTextStyle: {fontSize: 18},
+            position: 'right'
         };
 
         var chart = new google.visualization.PieChart(document.getElementById('fully_vaccined_div'));
