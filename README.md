@@ -5,7 +5,7 @@ Hi everyone! We are 4 beginner hackers that are super passionate about software 
 ## Our team: 404 Inside Out
 Members: Carol Duan, Xiaoyue Zhou, Yifan Yang, Yihan Yang
 
-Time: Aug.27 10PM - Aug.29 10AM
+Time: Aug. 27, 2021 10PM - Aug. 29, 2021 10AM
 
 ## Aim
 The THEME of this Hackathon is **bridging the gaps between technology and global issues**. COVID-19, as one of the most significant issues that the world is facing, draws our attention. 
