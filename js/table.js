@@ -51,13 +51,18 @@ function buildTable(data){
     var table = document.getElementById("myTable");
     table.innerHTML = '';
     for (var i = 0; i < data.length; i++){
+        var fullyVac = "Not Fully Vaccinated";
+        
+        if (data[i].doseNum === 2) {
+            fullyVac = "Fully Vaccinated";
+        }
         var row = `<tr>
-                        <td>${data[i].id}</td>
                         <td>${data[i].lastName}</td>
                         <td>${data[i].firstName}</td>
                         <td>${data[i].studentId}</td>
                         <td>${data[i].faculty}</td>
-                        <td>'Fully Vaccinated'</td>
+                        
+                        <td>${fullyVac}</td>
                         <td>${data[i].doseNum}</td>
                         <td>${data[i].firstDoseManufacturer}</td>
                         <td>${data[i].firstDoseDate}</td>
