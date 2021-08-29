@@ -11,6 +11,13 @@ Time: Aug. 27, 2021 10PM - Aug. 29, 2021 10AM
 The THEME of this Hackathon is **bridging the gaps between technology and global issues**. COVID-19, as one of the most significant issues that the world is facing, draws our attention. 
 We are creating a shortcut of a data management system that would support the management of students' vaccination records.
 
+## Set up
+```shell
+npm install
+npm start
+```
+
+
 ## Functionality
 - Students can add their personal information and vaccination records via *index.html* page
 - Managers can search for a student's record using his/her student ID via *table.html* page
