@@ -4,7 +4,8 @@ $(function() {
         $('#home-link').removeClass('active');
         $('#table-link').addClass('active');
         $('#summary-link').removeClass('active');
-    });   
+    });
+    $('#footer').load('footer.html');
 });
 
 
@@ -16,7 +17,7 @@ const fetchRecords = async(func) => {
     const res = await fetch('http://localhost:5000/data');
     data = await res.json();
     console.log(data);
-    
+
     func(data);
     return data;
 }
@@ -47,7 +48,7 @@ searchBar.addEventListener('keyup', (e) => {
 
 
 
-function buildTable(data){
+function buildTable(data) {
     var table = document.getElementById("myTable");
     table.innerHTML = '';
     for (var i = 0; i < data.length; i++){
@@ -61,7 +62,6 @@ function buildTable(data){
                         <td>${data[i].firstName}</td>
                         <td>${data[i].studentId}</td>
                         <td>${data[i].faculty}</td>
-                        
                         <td>${fullyVac}</td>
                         <td>${data[i].doseNum}</td>
                         <td>${data[i].firstDoseManufacturer}</td>
@@ -72,3 +72,4 @@ function buildTable(data){
         table.innerHTML += row;
     }
 }
+
