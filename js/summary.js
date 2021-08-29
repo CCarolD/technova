@@ -54,7 +54,7 @@ async function drawChart() {
             });
         }
         
-        console.log(tableData); //这里的数据可以用来画个表格
+        console.log(tableData);
     });
 
     // Bar graph
@@ -133,7 +133,6 @@ const getTypeSize = async(vacType, visa) => {
 }
 
 $(function() {
-    // html.html navbar一栏，设置active class
     $('#navBar').load('navbar.html', function() {
         $('#home-link').removeClass('active');
         $('#table-link').removeClass('active');

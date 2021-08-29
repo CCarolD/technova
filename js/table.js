@@ -1,5 +1,4 @@
 $(function() {
-    // html.html navbar一栏，设置active class
     $('#navBar').load('navbar.html', function() {
         $('#home-link').removeClass('active');
         $('#table-link').addClass('active');
@@ -12,7 +11,7 @@ $(function() {
 let data = [];
 
 
-// 用来从db.json中取数据的函数
+// Fetch data from db.json
 const fetchRecords = async(func) => {
     const res = await fetch('http://localhost:5000/data');
     data = await res.json();
@@ -38,12 +37,7 @@ searchBar.addEventListener('keyup', (e) => {
             student.studentId.toLowerCase().includes(searchString)
         );
     });
-    // fetchRecords((data, newData='') => {
-    //     if (newData='') buildTable(data);
-    //     else buildTable(newData);
-    // })
     buildTable(filteredStudents);
-    //buildTable(filteredStudents);
 });
 
 
