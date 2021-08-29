@@ -38,6 +38,11 @@ $card-border-radius: 10px;
     font-size: 1.2em;
 }
 
+.card.col-12 {
+    border: none;
+    box-shadow: 5px 5px 5px #8c968e;
+}
+
 .btn-primary {
     color: $icon-dark;
     background-color: #ffffff;
