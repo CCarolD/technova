@@ -21,18 +21,6 @@
         "concurrently": "^6.2.1",
         "cssmin": "^0.4.3",
         "font-awesome": "^4.7.0",
-        "grunt": "^1.4.1",
-        "grunt-browser-sync": "^2.2.0",
-        "grunt-contrib-clean": "^2.0.0",
-        "grunt-contrib-concat": "^1.0.1",
-        "grunt-contrib-copy": "^1.0.0",
-        "grunt-contrib-cssmin": "^4.0.0",
-        "grunt-contrib-htmlmin": "^3.1.0",
-        "grunt-contrib-imagemin": "^4.0.0",
-        "grunt-contrib-uglify": "^5.0.1",
-        "grunt-contrib-watch": "^1.1.0",
-        "grunt-filerev": "^2.3.1",
-        "grunt-usemin": "^3.1.1",
         "htmlmin": "^0.0.7",
         "jit-grunt": "^0.10.0",
         "json-server": "^0.16.3",
@@ -54,6 +42,10 @@
         "echarts": "^5.1.2",
         "highcharts": "^9.2.2",
         "jquery": "^3.6.0",
-        "node-scss": "^7.0.3"
+        "node-scss": "^7.0.3",
+        "onchange": "^7.1.0",
+        "lite-server": "^2.3.0",
+        "node-sass": "^6.0.1",
+        "json-server": "^0.16.3"
     }
 }
