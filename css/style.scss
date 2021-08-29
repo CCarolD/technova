@@ -85,8 +85,8 @@ a:focus {
     width: 150px;
 }
 
-li a:hover,
-li a:focus {
+.nav-item a:hover,
+.nav-item a:focus {
     background-image: linear-gradient(to top left, #6ed197, #1f7341);
     color: rgb(233, 240, 236) !important;
     text-shadow: 1px 1px 1px rgb(92, 94, 93);
@@ -251,6 +251,13 @@ footer {
         color: #67b186 !important;
         text-shadow: none;
         border-radius: 0;
+        @media (max-width: 991px) {
+            color: #67b186 !important;
+            text-shadow: none;
+            border-radius: 0;
+            width: 100%;
+            padding: none !important;
+        }
     }
     .text-center a {
         color: $site-c4;

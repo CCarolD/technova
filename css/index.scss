@@ -66,7 +66,7 @@ $card-border-radius: 10px;
     font-size: 0.9em;
 }
 
-input.btn:hover.next {
+input.btn:hover.next, input.btn:focus.next {
     background-color: $icon-dark;
     border: 1px solid $icon-dark;
 }
@@ -80,7 +80,8 @@ input.btn:hover.next {
     padding: 6px 12px;
 }
 
-.d-flex.justify-content-center a:hover {
+.d-flex.justify-content-center a:hover,
+.d-flex.justify-content-center a:focus {
     color: #fff;
     background-color: $icon-dark;
 }
