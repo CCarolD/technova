@@ -17,6 +17,8 @@ npm install
 npm start
 ```
 
+Technology: nodeJS, JSON Server, BootStrap, Google Charts, SCSS, JavaScript, JQuery, HTML
+
 
 ## Functionality
 - Students can add their personal information and vaccination records via *index.html* page
@@ -36,4 +38,4 @@ This project aims to provide free service for the institution to manage their st
 <br>
 
 **We believe that**
-## Warriors protect warriors!
+<center><h1>Warriors protect warriors!</h1></center>
