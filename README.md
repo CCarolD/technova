@@ -7,6 +7,8 @@ Members: Carol Duan, Xiaoyue Zhou, Yifan Yang, Yihan Yang
 
 Time: Aug. 27, 2021 10PM - Aug. 29, 2021 10AM
 
+Pitch: https://youtu.be/KW7128YqfBQ
+
 ## Aim
 The THEME of this Hackathon is **bridging the gaps between technology and global issues**. COVID-19, as one of the most significant issues that the world is facing, draws our attention. 
 We are creating a shortcut of a data management system that would support the management of students' vaccination records.
