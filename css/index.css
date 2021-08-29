@@ -45,7 +45,7 @@
   margin-right: 25px;
   font-size: 0.9em; }
 
-input.btn:hover.next {
+input.btn:hover.next, input.btn:focus.next {
   background-color: #1f7341;
   border: 1px solid #1f7341; }
 
@@ -57,7 +57,8 @@ input.btn:hover.next {
   font-family: 'Oxygen', sans-serif;
   padding: 6px 12px; }
 
-.d-flex.justify-content-center a:hover {
+.d-flex.justify-content-center a:hover,
+.d-flex.justify-content-center a:focus {
   color: #fff;
   background-color: #1f7341; }
 

@@ -65,14 +65,14 @@ a:focus {
   text-align: center;
   width: 150px; }
 
-li a:hover,
-li a:focus {
+.nav-item a:hover,
+.nav-item a:focus {
   background-image: linear-gradient(to top left, #6ed197, #1f7341);
   color: #e9f0ec !important;
   text-shadow: 1px 1px 1px #5c5e5d; }
   @media (max-width: 991px) {
-    li a:hover,
-    li a:focus {
+    .nav-item a:hover,
+    .nav-item a:focus {
       border-radius: 0;
       width: 100%;
       padding-left: 100% !important;
@@ -208,6 +208,18 @@ footer {
     color: #67b186 !important;
     text-shadow: none;
     border-radius: 0; }
+    @media (max-width: 991px) {
+      footer .list-unstyled a:hover,
+      footer .list-unstyled a:focus,
+      footer address > a:hover,
+      footer address > a:focus,
+      footer .text-center a:hover,
+      footer .text-center a:focus {
+        color: #67b186 !important;
+        text-shadow: none;
+        border-radius: 0;
+        width: 100%;
+        padding: none !important; } }
   footer .text-center a {
     color: #1f7341; }
   footer h5 {
