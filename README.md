@@ -23,7 +23,8 @@ This project aims to provide free service for the institution to
 - Implement the full backend side using a remote DB to store information
 - Implement the user system that displays the page differently for students and managers
 - Implement the search bar on the table page more wisely by providing more entries
-...
+- ...
 
-We believe that
+<br>
+**We believe that**
 ## Warriors protect warriors!
