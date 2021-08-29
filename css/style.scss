@@ -194,7 +194,12 @@ table {
     border-collapse: separate;
     border-spacing: 0;
     border-collapse: collapse;
-    width: 100%; 
+    width: 100%;
+    text-align: center;
+    vertical-align: middle !important;
+    @media (min-width: 1626px) {
+        display: inline-table;
+    }
 }
 
 button {
