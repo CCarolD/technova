@@ -9,7 +9,7 @@
         "lite": "lite-server",
         "scss": "node-sass -o css/ css/",
         "watch:scss": "onchange \"css/*.scss\" -- npm run scss",
-        "watch:all": "concurrently \"npm run watch:scss\" \"npm run lite\" \"npm run server\"",
+        "watch:all": "npm run watch:scss && npm run lite && npm run server",
         "clean": "rimraf dist",
         "copyfonts": "copyfiles -f node_modules/font-awesome/fonts/* dist/fonts",
         "imagemin": "imagemin img/* -o dist/img",
@@ -49,6 +49,7 @@
     "dependencies": {
         "@fortawesome/fontawesome-free": "^5.15.4",
         "bootstrap": "^5.1.0",
+        "concurrently": "^6.2.1",
         "echarts": "^5.1.2",
         "highcharts": "^9.2.2",
         "jquery": "^3.6.0",
